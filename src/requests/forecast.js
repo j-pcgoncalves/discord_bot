@@ -22,6 +22,7 @@ async function fetchForecast(location) {
             const weatherData = response.data.forecast.forecastday.map((forecastDay) => {
                 return {
                     date: forecastDay.date,
+                    
                     temperatureMinC: forecastDay.day.mintemp_c,
                     temperatureMaxC: forecastDay.day.maxtemp_c,
                     temperatureMinF: forecastDay.day.mintemp_f,
