@@ -22,11 +22,16 @@ async function fetchForecast(location) {
             const weatherData = response.data.forecast.forecastday.map((forecastDay) => {
                 return {
                     date: forecastDay.date,
-                    
+
                     temperatureMinC: forecastDay.day.mintemp_c,
                     temperatureMaxC: forecastDay.day.maxtemp_c,
                     temperatureMinF: forecastDay.day.mintemp_f,
                     temperatureMaxF: forecastDay.day.maxtemp_f,
+
+                    sunriseTime: forecastDay.astro.sunrise,
+                    sunsetTime: forecastDay.astro.sunset,
+                    moonriseTime: forecastDay.astro.moonrise,
+                    moonsetTime: forecastDay.astro.moonset,
                 }
             });
 
